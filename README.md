@@ -21,8 +21,16 @@ Finally the combined DFs were saved in "data/processed" as "crude_futures.csv" a
 ## Data Processing
 The CSV files of the cleaned Crude and Gas Oil data were imported before being merged. The merging was done by intersection of dates. 
 
-The data have different units for the prices. The Brent Crude futures is in \$/bbl whilst the LSGO futures is in \$/metric ton. Thus approximating the conversion factors from energy companies, I divided LSGO prices by 7.46 approximating the number of barrels per metric ton.
+The data have different units for the prices. The Brent Crude futures is in dollars/bbl whilst the LSGO futures is in dollars/metric ton. Thus approximating the conversion factors from energy companies, I divided LSGO prices by 7.46 approximating the number of barrels per metric ton.
 
 After which a crack_spread calculation was performed by the differences between the date by date close prices. 
 
 This merged dataframe is stored in "data/processed" as "crack_spread.csv". We will be using this to perform EDA and build it up with our future calculations.
+
+## Exploratory Data Analysis (EDA)
+This notebook follows loosely a Box-Jenkins methodology to discover seasonality & stationarity within the data. 
+
+Initial findings show the data is non-stationarity and exhibits yearly seasonality (252 trading days). Thus we used a first order differencing method to remove the stationarity. And after plotting the ACF and PACF graphs, we used this to infer the model to be used (in this case an ARIMA model) with non-seasonal parameters $p$ and $q$ determined. Interestingly the differenced data no longer exhibited seasonality despite only first order differencing. The reason for this I am not sure.
+
+## ARIMA/SARIMA Model Fitting
+After fitting and analysing the model results compared to naive prediction, our model does not predict well. There are various reasons as uncovered by our EDA and model assumptions. So this was as expected however, this has facilitated a need for better suited models. This has led to a discussion in the arima_model.ipynb file discussing ML models, exogenous data as well as a hybrid model based on a research paper.
