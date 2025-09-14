@@ -45,7 +45,6 @@ I have implemented a structured data pipeline:
 4. **Modeling** → ARIMA/SARIMA forecasting and comparison with naive models.  
 5. **Discussion** → Limitations and directions for ML and hybrid approaches.
 
----
 
 ## Repository Structure
 ```
@@ -62,7 +61,6 @@ I have implemented a structured data pipeline:
 └── requirements.txt          # Python dependencies
 ```
 
----
 
 ## Setup Instructions
 
@@ -91,7 +89,6 @@ Dependencies include:
 - `scikit-learn` (metrics, future ML models)
 - `jupyter` (interactive analysis)
 
----
 
 ## Data Pipeline
 
@@ -105,8 +102,6 @@ Dependencies include:
   - Removing duplicates
 - Exports → `data/processed/crude_futures.csv`, `gasoil_futures.csv`.
 
----
-
 ### Data Processing (`data_processing.ipynb`)
 - Brent futures prices are in **USD/barrel**.
 - Gasoil futures prices are in **USD/metric ton**.
@@ -117,8 +112,6 @@ Dependencies include:
 \]
 - Merged dataframe saved as → `data/processed/crack_spread.csv`.
 
----
-
 ### Exploratory Data Analysis (`eda.ipynb`)
 - **Objective**: Identify statistical properties (stationarity, autocorrelation, seasonality).
 - Tests applied:
@@ -128,8 +121,6 @@ Dependencies include:
 - Key Findings:
   - Raw series → **non-stationary**, annual seasonality (~252 trading days).
   - After **first-order differencing**, series becomes stationary and seasonality largely disappears.
-
----
 
 ### ARIMA Modeling (`arima_model.ipynb`)
 - Follows Box–Jenkins methodology.
@@ -145,14 +136,10 @@ Dependencies include:
   - Structural market factors not captured by univariate ARIMA.
   - Need for **exogenous regressors (ARIMAX)** or **ML-based approaches**.
 
----
-
 ## Results & Insights
 - Crack spread exhibits **non-stationarity** and **weak predictability** using ARIMA.
 - Market is influenced by exogenous drivers (refinery demand, shipping, weather, regulations).
 - Purely statistical forecasting is insufficient → motivates **hybrid econometric + ML models**.
-
----
 
 ## Future Work
 - **Exogenous features**: Add refinery margins, demand data, shipping indices.
@@ -163,14 +150,10 @@ Dependencies include:
 - **Backtesting** crack-spread hedging strategies.
 - **Visualization dashboards** for monitoring spreads.
 
----
-
 ## References
 1. Box, G.E.P., Jenkins, G.M., & Reinsel, G.C. (2015). *Time Series Analysis: Forecasting and Control*.
 2. MarketWatch Futures Data — Brent & Gas Oil.
 3. Research on hybrid ARIMA–ML crack spread forecasting models.
-
----
 
 ## Author
 Developed by Anurag Chaudhari as part of refinery risk management and quant finance research.
