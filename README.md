@@ -173,7 +173,7 @@ Dependencies include:
 ---
 
 ## 👨‍💻 Author
-Developed by **[Your Name]** as part of refinery risk management and quant finance research.
+Developed by Anurag Chaudhari as part of refinery risk management and quant finance research.
 
 
 
