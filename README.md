@@ -34,7 +34,7 @@ This notebook follows loosely a Box-Jenkins methodology to discover seasonality 
 
 # Gasoil Crack Spread Analysis
 
-## 📌 Project Overview
+## Project Overview
 This repository performs a **statistical and machine learning–based forecasting analysis** of the **European Low Sulphur Gas Oil (LSGO) crack spread** for potential refinery hedging strategies.  
 The crack spread is defined as the **difference between refined product (LSGO) and crude oil (Brent) futures prices**.  
 
@@ -47,7 +47,7 @@ I have implemented a structured data pipeline:
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 ```
 .
 ├── data/
@@ -64,7 +64,7 @@ I have implemented a structured data pipeline:
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone Repository
 ```bash
@@ -93,9 +93,9 @@ Dependencies include:
 
 ---
 
-## 📊 Data Pipeline
+## Data Pipeline
 
-### 🔹 Data Cleaning (`data_cleaning.ipynb`)
+### Data Cleaning (`data_cleaning.ipynb`)
 - Reads **17 yearly CSVs** for Brent (`BR00`) and Gas Oil (`GS00`) futures (2009–2025).
 - Concatenates into a single time series per ticker.
 - Operations:
@@ -107,7 +107,7 @@ Dependencies include:
 
 ---
 
-### 🔹 Data Processing (`data_processing.ipynb`)
+### Data Processing (`data_processing.ipynb`)
 - Brent futures prices are in **USD/barrel**.
 - Gasoil futures prices are in **USD/metric ton**.
 - Conversion → `1 metric ton ≈ 7.46 barrels`.
@@ -119,7 +119,7 @@ Dependencies include:
 
 ---
 
-### 🔹 Exploratory Data Analysis (`eda.ipynb`)
+### Exploratory Data Analysis (`eda.ipynb`)
 - **Objective**: Identify statistical properties (stationarity, autocorrelation, seasonality).
 - Tests applied:
   - Rolling mean/variance plots
@@ -131,7 +131,7 @@ Dependencies include:
 
 ---
 
-### 🔹 ARIMA Modeling (`arima_model.ipynb`)
+### ARIMA Modeling (`arima_model.ipynb`)
 - Follows Box–Jenkins methodology.
 - Candidate models fit:
   - ARIMA(\(p,1,q\)) with differenced series.
@@ -147,14 +147,14 @@ Dependencies include:
 
 ---
 
-## 📈 Results & Insights
+## Results & Insights
 - Crack spread exhibits **non-stationarity** and **weak predictability** using ARIMA.
 - Market is influenced by exogenous drivers (refinery demand, shipping, weather, regulations).
 - Purely statistical forecasting is insufficient → motivates **hybrid econometric + ML models**.
 
 ---
 
-## 🚀 Future Work
+## Future Work
 - **Exogenous features**: Add refinery margins, demand data, shipping indices.
 - **Machine Learning Models**:
   - Random Forests, Gradient Boosting
@@ -165,14 +165,14 @@ Dependencies include:
 
 ---
 
-## 📚 References
+## References
 1. Box, G.E.P., Jenkins, G.M., & Reinsel, G.C. (2015). *Time Series Analysis: Forecasting and Control*.
 2. MarketWatch Futures Data — Brent & Gas Oil.
 3. Research on hybrid ARIMA–ML crack spread forecasting models.
 
 ---
 
-## 👨‍💻 Author
+## Author
 Developed by Anurag Chaudhari as part of refinery risk management and quant finance research.
 
 
